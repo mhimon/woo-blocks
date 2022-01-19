@@ -1,0 +1,19 @@
+{
+    "name": "mh/woo-blocks",
+    "description": "WooCommerce Blocks for Gutenberg",
+    "authors": [
+        {
+            "name": "mhimon",
+            "email": "mahbubhasanimon@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "MH\\WB\\": "includes/"
+        },
+        "files": [ "includes/functions.php" ]
+    }
+}
