@@ -103,24 +103,24 @@ class Blocks {
 			$content .= '</div>';
 
 			// $content .= '<b>' . isset( $con_visibility['title'] ) ? 'T' : 'F' . '</b>';
-			if ( 'true' === $con_visibility['title'] ) {
+			if ( 'true' == $con_visibility['title'] ) {
 				$content .= '<div class="wc-block-grid__product-title">';
 				$content .= wp_kses_post( $product->get_title() );
 				$content .= '</div>';
 			}
 			$content .= '</a>';
-			if ( 'true' === $con_visibility['price'] && $product->is_on_sale() ) {
+			if ( 'true' == $con_visibility['price'] && $product->is_on_sale() ) {
 				$content .= '<div class="wc-block-grid__product-onsale">';
 				$content .= '<span>' . esc_html__( 'Sale', 'woo-blocks' ) . '</span>';
 				$content .= '<span class="screen-reader-text">' . esc_html__( 'Product On Sale', 'woo-blocks' ) . '</span>';
 				$content .= '</div>';
 			}
-			if ( 'true' === $con_visibility['price'] ) {
+			if ( 'true' == $con_visibility['price'] ) {
 				$content .= '<div class="wc-block-grid__product-price price">';
 				$content .= wp_kses_post( $product->get_price_html() );
 				$content .= '</div>';
 			}
-			if ( 'true' === $con_visibility['rating'] ) {
+			if ( 'true' == $con_visibility['rating'] ) {
 
 				$rating_count = $product->get_rating_count();
 				$average      = $product->get_average_rating();
@@ -130,7 +130,7 @@ class Blocks {
 					wc_get_rating_html( $average, $rating_count ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
-			if ( 'true' === $con_visibility['button'] ) {
+			if ( 'true' == $con_visibility['button'] ) {
 				ob_start();
 				woocommerce_template_loop_add_to_cart();
 				$add_to_cart = ob_get_clean();
